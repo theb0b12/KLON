@@ -1,0 +1,129 @@
+units:
+  # kx and ky allow for easy- easi-er switching between MX and Choc.
+  kx: u
+  ky: u
+  px: kx + 2
+  py: ky + 2
+  # These variables allow for updating the previews on https://ergogen.ceoloide.com
+  $default_width: u
+  $default_height: u
+  # KiCAD places the PCB in the middle of nowhere to start with.
+  # These variables give a starting place for later shifts.
+  starting_x: 100
+  starting_y: -100
+
+  # Defaults to M2 Screws
+  screwSize: 1
+  standoffSize: 2.5
+
+meta:
+  engine: 4.1.0
+points:
+  key.tags: 
+    - key
+  zones:
+    matrix:
+      anchor:
+        shift: [100, -110] # Fix KiCad placement
+      columns:
+
+        inner:
+        index:
+          key:
+            stagger: 4
+        middle:
+          key:
+            stagger: 10
+        ring:
+          key:
+            stagger: -12
+            splay: -4
+            spread: 27
+        pinky:
+          key:
+            stagger: -12
+            splay: -10
+            spread: 37
+        pinky_extra:
+          key:
+            stagger: 4
+
+          rows.top.skip: true
+
+
+      rows:
+        bottom:
+          shift: [0, -5ky]
+        home:
+
+        top:
+
+    thumbfan:
+      anchor:
+        - ref: matrix_index_bottom
+          shift: [-2.7ky,-1.4ky]
+      columns:
+
+        thumb4:
+          key:
+            rotate: 45
+            shift: [-7,-28]
+        thumb1:
+          key:
+            rotate: 30
+            shift: [-7,-13]
+        thumb2:
+          key:
+            rotate: 15
+            shift: [-4,-3]
+        thumb3:
+
+      rows:
+        r0:
+
+outlines:
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-0.5]
+
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_extra_home
+          shift: [0.5px,0.5py]
+        - ref: matrix_pinky_top
+          shift: [0.5px,0.5py]
+        - ref: matrix_ring_top
+          shift: [0.5px,0.5py]
+        - ref: matrix_middle_top
+          shift: [0.5px,0.5py]
+        - ref: matrix_middle_top
+          shift: [0px,0.5py]
+        - ref: matrix_middle_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_index_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_inner_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_inner_top
+          shift: [-2.65px,0.5py]
+        - ref: thumbfan_thumb4_r0
+          shift: [-0.5px,0.5py]
+        - ref: thumbfan_thumb4_r0
+          shift: [-0.5px,-0.5py]
+        - ref: thumbfan_thumb3_r0
+          shift: [0.5px,-0.5py]
+        - ref: matrix_pinky_bottom
+          shift: [0.5px,-0.5py]
+        - ref: matrix_pinky_extra_bottom
+          shift: [0.5px,-0.5py]
+
+  combo:
+    - name: board
+    - operation: subtract
+      name: keys
+
+
+
