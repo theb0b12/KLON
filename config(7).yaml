@@ -1,0 +1,253 @@
+units:
+  # kx and ky allow for easy- easi-er switching between MX and Choc.
+  kx: u
+  ky: u
+  px: kx + 2
+  py: ky + 2
+  # These variables allow for updating the previews on https://ergogen.ceoloide.com
+  $default_width: u
+  $default_height: u
+  # KiCAD places the PCB in the middle of nowhere to start with.
+  # These variables give a starting place for later shifts.
+  starting_x: 100
+  starting_y: -100
+
+  # Defaults to M2 Screws
+  screwSize: 1
+  standoffSize: 2.5
+
+meta:
+  engine: 4.1.0
+points:
+  key.tags: 
+    - key
+  zones:
+    matrix:
+      anchor:
+        shift: [100, -110] # Fix KiCad placement
+      key:
+        padding: u
+        spread: u
+      columns:
+ 
+        inner:
+        index:
+          key:
+            stagger: 4
+        middle:
+          key:
+            stagger: 9
+        ring:
+          key:
+            stagger: -10.3
+            splay: -4
+            spread: u
+        pinky:
+          key:
+            stagger: -14
+            splay: -6
+            spread: u
+        pinky_extra:
+          key:
+            stagger: 5
+
+          rows.top.skip: true
+
+
+      rows:
+        bottom:
+          shift: [0, 0]
+        home:
+
+        top:
+        
+
+    thumb1:
+      anchor:
+        - ref: matrix_index_bottom
+          shift: [2.95, -21.95]
+      columns:
+        1:
+          key.anchor: matrix_index_bottom
+      rows:
+        r0:
+    thumb2:
+      anchor:
+        - ref: matrix_index_bottom
+          shift: [-18.16425, -24.83108]
+      columns:
+        2:
+          key.rotate: 15
+      rows:
+        r0:
+    thumb3:
+      anchor:
+        - ref: matrix_index_bottom
+          shift: [-37.81425, -33.08388]
+      columns:
+        3:
+          key.rotate: 30
+      rows:
+        r0:
+    thumb4:
+      anchor:
+        - ref: matrix_index_bottom
+          shift: [-54.68925, -46.14597]
+      columns:
+        4:
+          key.rotate: 45
+      rows:
+        r0:
+
+outlines:
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-0.5]
+  pinky1:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_bottom
+          shift: [10.3, -10.3]
+        - ref: matrix_pinky_bottom
+          shift: [-10.3, -10.3]
+        - ref: matrix_pinky_top
+          shift: [-10.3, 10.3]
+        - ref: matrix_pinky_top
+          shift: [10.3, 10.3]
+  ring:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_ring_bottom
+          shift: [-10.3, -17.91695]
+        - ref: matrix_ring_bottom
+          shift: [10.3, -17.91695]
+        - ref: matrix_ring_home
+          shift: [10.3, 10.3]
+        - ref: matrix_ring_home
+          shift: [-10.3, 10.3]
+  middle:
+    - what: rectangle
+      where: matrix_middle_top
+      size: [20.6, 20.6]
+  main:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_middle_top
+          shift: [-78.3, -90]
+        - ref: matrix_middle_top
+          shift: [-78.3,6.3 ] 
+        - ref: matrix_middle_top
+          shift: [51.1 ,6.3]
+        - ref: matrix_middle_top
+          shift: [51.1 ,-40]
+        - ref: matrix_middle_top
+          shift: [20, -65.82234]
+        - ref: matrix_middle_top
+          shift: [-20, -65.82234]
+  thumb_arc:
+    - what: path
+      
+      segments:
+        - type: line
+          points:
+          - ref: thumb4_4_r0
+            shift: [0, 10.3]
+          - ref: thumb4_4_r0
+            shift: [-10.3, 10.3]
+          - ref: thumb4_4_r0
+            shift: [-10.3, -10.3]
+          - ref: thumb4_4_r0
+            shift: [0, -10.3]
+        - type: arc
+          points:
+            - ref: thumb2_2_r0
+              shift: [-9.16356, -11.64804]
+            - ref: thumb1_1_r0
+              shift: [0, -10.3]
+        - type: line
+          points:
+            - ref: thumb1_1_r0
+              shift: [0, -10.3]
+            - ref: thumb1_1_r0
+              shift: [10.3, -10.3]
+            - ref: thumb1_1_r0
+              shift: [10.3, 10.3]
+            - ref: thumb1_1_r0
+              shift: [0, 10.3]
+        - type: arc
+          points:
+            - ref: thumb2_2_r0
+              shift: [11.95286, 8.76225]
+            - ref: thumb4_4_r0
+              shift: [0, 10.3]
+  board2:
+    - name: pinky1
+      operation: add
+    - name: ring
+    - name: thumb_arc
+    - name: middle
+    - name: main
+
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_extra_home
+          shift: [0.5px,0.5py]
+        - ref: matrix_pinky_top
+          shift: [0.5px,0.5py]
+        - ref: matrix_ring_top
+          shift: [0.5px,0.5py]
+        - ref: matrix_middle_top
+          shift: [0.5px,0.5py]
+        - ref: matrix_middle_top
+          shift: [0px,0.5py]
+        - ref: matrix_middle_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_index_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_inner_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_inner_top
+          shift: [-2.65px,0.5py]
+#        - ref: thumbfan_thumb4_r0
+#          shift: [-0.5px,0.5py]
+#        - ref: thumbfan_thumb4_r0
+#          shift: [-0.5px,-0.5py]
+#        - ref: thumbfan_thumb3_r0
+#          shift: [0.5px,-0.5py]
+        - ref: matrix_pinky_bottom
+          shift: [0.5px,-0.5py]
+        - ref: matrix_pinky_extra_bottom
+          shift: [0.5px,-0.5py]
+
+
+  breakaway:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: thumb4_4_r0
+          shift: [0.4px,0.7py]
+        - ref: thumb3_3_r0
+          shift: [-0.6px, 0.5py]
+
+  combo:
+    - name: board2
+    - operation: stack
+      name: keys
+    - operation: stack
+      name: breakaway
+  
+  combo2:
+    - name: board2
+    - operation: stack
+      name: keys
+    - operation: subtract
+      name: breakaway
+
+
+
