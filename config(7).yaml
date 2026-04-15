@@ -9,8 +9,8 @@ units:
   $default_height: u
   # KiCAD places the PCB in the middle of nowhere to start with.
   # These variables give a starting place for later shifts.
-  starting_x: 100
-  starting_y: -100
+  starting_x: 170
+  starting_y: -150
 
   # Defaults to M2 Screws
   screwSize: 1
@@ -24,7 +24,7 @@ points:
   zones:
     matrix:
       anchor:
-        shift: [100, -110] # Fix KiCad placement
+        shift: [starting_x, starting_y] # Fix KiCad placement
       key:
         padding: u
         spread: u
@@ -364,7 +364,78 @@ outlines:
   #    name: keys
 
   
-  #combo2:
+  # combo2:
   #  - name: board2
   #  - operation: stack
   #    name: keys
+
+
+pcbs:
+  KLON:
+    outlines:
+      main:
+        outline: board2
+    template: kicad8
+    footprints:
+      choc_hotswap:
+        what: ceoloide/switch_choc_v1_v2
+        where: true
+        params:
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+          include_stabilizer_pad: false
+    
+      mx_hotswap:
+          what: ceoloide/switch_mx
+          where: true
+          params:
+            hotswap: true
+            from: "{{column_net}}"
+            to: "{{colrow}}"
+          adjust:
+            rotate: 180
+
+      diode:
+        what: ceoloide/diode_tht_sod123
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -8.5]
+
+      nicenano:
+        what: ceoloide/mcu_nice_nano
+        where:
+          ref: matrix_inner_top
+          shift: [-1kx, 2]
+
+      battery_connector:
+        what: ceoloide/battery_connector_jst_ph_2
+        where: matrix_inner_top
+        adjust:
+          shift: [-1kx,-1ky]
+          rotate: 90
+
+      on_off_switch:
+        what: ceoloide/power_switch_smd_side
+        where: matrix_inner_top
+        adjust:
+          shift: [-2kx, -1ky]
+        params:
+          from: BAT_P
+          to: RAW
+
+      reset_switch:
+        what: ceoloide/reset_switch_smd_side
+        params:
+          from: GND
+          to: RST
+        where: 
+          ref: matrix_inner_top
+
+        adjust:
+          shift: [-2kx, -1.5ky]
+          rotate: 90
+
