@@ -41,12 +41,12 @@ points:
           key:
             stagger: -10.3
             splay: -4
-            spread: u
+            spread: 19
         pinky:
           key:
-            stagger: -14
+            stagger: -14+1.23699
             splay: -6
-            spread: u
+            spread: u-0.17585
         pinky_extra:
           key:
             stagger: 5
@@ -116,6 +116,20 @@ outlines:
           shift: [-10.3, 10.3]
         - ref: matrix_pinky_top
           shift: [10.3, 10.3]
+      fillet: 0.7
+  pinky2:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_extra_home
+          shift: [10.3, 10.3]
+        - ref: matrix_pinky_extra_home
+          shift: [-10.3, 10.3]
+        - ref: matrix_pinky_extra_bottom
+          shift: [-10.3, -10.3]
+        - ref: matrix_pinky_extra_bottom
+          shift: [10.3, -10.3]
+      fillet: 0.7
   ring:
     - what: polygon
       operation: stack
@@ -132,6 +146,7 @@ outlines:
     - what: rectangle
       where: matrix_middle_top
       size: [20.6, 20.6]
+      fillet: 0.7
   main:
     - what: polygon
       operation: stack
@@ -144,10 +159,11 @@ outlines:
           shift: [51.1 ,6.3]
         - ref: matrix_middle_top
           shift: [51.1 ,-40]
-        - ref: matrix_middle_top
-          shift: [20, -65.82234]
-        - ref: matrix_middle_top
-          shift: [-20, -65.82234]
+        - ref: matrix_middle_bottom
+          shift: [20, -27.67714]
+        - ref: matrix_middle_bottom
+          shift: [-20, -27.67714]
+      fillet: 0.7
   thumb_arc:
     - what: path
       
@@ -165,7 +181,7 @@ outlines:
         - type: arc
           points:
             - ref: thumb2_2_r0
-              shift: [-9.16356, -11.64804]
+              shift: [-9.26866, -10.87903]
             - ref: thumb1_1_r0
               shift: [0, -10.3]
         - type: line
@@ -184,13 +200,74 @@ outlines:
               shift: [11.95286, 8.76225]
             - ref: thumb4_4_r0
               shift: [0, 10.3]
-  board2:
+      fillet: 0.7
+  board0:
     - name: pinky1
       operation: add
     - name: ring
     - name: thumb_arc
     - name: middle
     - name: main
+    - name: pinky2
+  break:
+    - what: polygon
+      operation: stack
+      points:
+      - ref: matrix_pinky_top
+        shift: [10.3, 10.3]
+      - ref: matrix_pinky_top
+        shift: [10.3, -15]
+      - ref: matrix_pinky_top
+        shift: [11.3, -15]
+      - ref: matrix_pinky_top
+        shift: [11.3, 10.3]
+      fillet: 0.5
+  breakaway2:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_top
+          shift: [10.3, -18]
+        - ref: matrix_pinky_top
+          shift: [10.3, -22]
+        - ref: matrix_pinky_top
+          shift: [11.3, -22]
+        - ref: matrix_pinky_top
+          shift: [11.3, -18]
+      fillet: 0.45
+  breakaway_pinky3:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_top
+          shift: [10.3, -25]
+        - ref: matrix_pinky_top
+          shift: [10.3, -34]
+        - ref: matrix_pinky_top
+          shift: [11.3, -34]
+        - ref: matrix_pinky_top
+          shift: [11.3, -25]
+      fillet: 0.49
+  breakaway_pinky4:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_top
+          shift: [10.3, -37]
+        - ref: matrix_pinky_top
+          shift: [10.3, -60]
+        - ref: matrix_pinky_top
+          shift: [11.3, -60]
+        - ref: matrix_pinky_top
+          shift: [11.3, -37]
+      fillet: 0.49
+
+  break1:
+    - name: break
+      operation: stack
+    - name: breakaway2
+    - name: breakaway_pinky3
+    - name: breakaway_pinky4
 
   board:
     - what: polygon
@@ -226,28 +303,68 @@ outlines:
           shift: [0.5px,-0.5py]
 
 
-  breakaway:
+  thumb1:
     - what: polygon
       operation: stack
       points:
-        - ref: thumb4_4_r0
-          shift: [0.4px,0.7py]
         - ref: thumb3_3_r0
-          shift: [-0.6px, 0.5py]
+          shift: [-10.6, -7.4]
+        - ref: thumb3_3_r0
+          shift: [-10.6, -20]
+        - ref: thumb3_3_r0
+          shift: [-11.6, -20]
+        - ref: thumb3_3_r0
+          shift: [-11.6, -7.4]
+      fillet: 0.49
 
-  combo:
-    - name: board2
-    - operation: stack
-      name: keys
-    - operation: stack
-      name: breakaway
-  
-  combo2:
-    - name: board2
-    - operation: stack
-      name: keys
+  thumb2:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: thumb3_3_r0
+          shift: [-10.6, -4.4]
+        - ref: thumb3_3_r0
+          shift: [-10.6, 3.2]
+        - ref: thumb3_3_r0
+          shift: [-11.6, 3.2]
+        - ref: thumb3_3_r0
+          shift: [-11.6, -4.4]
+      fillet: 0.49
+  thumb3:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: thumb3_3_r0
+          shift: [-10.6, 6.2]
+        - ref: matrix_inner_bottom
+          shift: [-32.2, -28]
+        - ref: matrix_inner_bottom
+          shift: [-45, -28]
+        - ref: matrix_inner_bottom
+          shift: [-45, -29]
+        - ref: matrix_inner_bottom
+          shift: [-32.7, -29]
+        - ref: thumb3_3_r0
+          shift: [-11.6, 6.2]
+      fillet: 0.4
+
+  board2:
+    - name: board0
     - operation: subtract
-      name: breakaway
+      name: break1
+    - operation: subtract
+      name: thumb3
+    - operation: subtract
+      name: thumb2
+    - operation: subtract
+      name: thumb1
+  #combo:
+  #  - name: board2
+  #  - operation: stack
+  #    name: keys
 
-
-
+  
+  #combo2:
+  #  - name: board2
+  #  - operation: stack
+  #    name: keys
