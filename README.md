@@ -1,7 +1,7 @@
 ### a version of Geist's Klor
 
-- Choc + MX hotswap
-- wired and wireless
+- Choc + MX hotswap (at the same time on the board, aka oppistite sides of the main hole)
+- wired and wireless support
 - reversable
 - all the other features like
 1. Breakaway pcb
