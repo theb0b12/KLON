@@ -272,7 +272,7 @@ outlines:
       where: matrix_middle_top
       size: [14.4, 11.4]
       adjust:
-        shift: [40, -7.75]
+        shift: [41.5, -6.25]
 
 
   break1:
@@ -461,7 +461,7 @@ pcbs:
         what: haptic
         where: matrix_middle_top
         adjust:
-          shift: [40, -7]
+          shift: [41.5, -5.5]
           rotate: 180
         params:
           P1: undefined
@@ -469,5 +469,13 @@ pcbs:
           P3: undefined
           P4: undefined
           P5: undefined
+
+      rotary_encoder:
+        what: ceoloide/rotary_encoder_ec11_ec12
+        where: matrix_inner_bottom
+        adjust:
+          shift: [-24,0]
+          rotate: 180
+
 
 
