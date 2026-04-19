@@ -448,12 +448,14 @@ pcbs:
         params:
           from: BAT_P
           to: RAW
+          reversible: true
 
       reset_switch:
         what: ceoloide/reset_switch_smd_side
         params:
           from: GND
           to: RST
+          reversible: true
         where: 
           ref: matrix_inner_top
 
@@ -487,8 +489,3 @@ pcbs:
           MP: idk
           S1: idk
           S2: idk
-
-
-
-
-
