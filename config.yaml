@@ -470,12 +470,21 @@ pcbs:
           P4: undefined
           P5: undefined
 
-      rotary_encoder:
-        what: ceoloide/rotary_encoder_ec11_ec12
+      rotatry_encoder:
+        what: rotary
         where: matrix_inner_bottom
         adjust:
           shift: [-24,0]
-          rotate: 180
+          rotate: 0
+        params:
+          A: idk
+          B: idk
+          C: idk
+          MP: idk
+          S1: idk
+          S2: idk
+
+
 
 
 
