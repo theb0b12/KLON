@@ -434,29 +434,35 @@ pcbs:
         what: ceoloide/battery_connector_jst_ph_2
         where: matrix_inner_top
         adjust:
-          shift: [-1kx,-1ky]
-          rotate: 90
+          shift: [-1.2kx,-1.2ky]
+          rotate: -90
+        params:
+          reversible: true
 
       on_off_switch:
         what: ceoloide/power_switch_smd_side
         where: matrix_inner_top
         adjust:
-          shift: [-2kx, -1ky]
+          shift: [-38.737, 9.176]
+          rotate: 180
         params:
           from: BAT_P
           to: RAW
+          reversible: true
 
       reset_switch:
         what: ceoloide/reset_switch_smd_side
         params:
           from: GND
           to: RST
+          reversible: true
         where: 
           ref: matrix_inner_top
 
         adjust:
           shift: [-2kx, -1.5ky]
           rotate: 90
+
       haptic:
         what: haptic
         where: matrix_middle_top
@@ -471,11 +477,27 @@ pcbs:
           P5: undefined
 
       rotary_encoder:
-        what: ceoloide/rotary_encoder_ec11_ec12
+        what: rotary
         where: matrix_inner_bottom
         adjust:
           shift: [-24,0]
+          rotate: 0
+        params:
+          A: idk
+          B: idk
+          C: idk
+          MP: idk
+          S1: idk
+          S2: idk
+
+      oled:
+        what: oled
+        where: matrix_inner_home
+        adjust:
+          shift: [-24.4, 2.8]
           rotate: 180
-
-
-
+        params:
+          P1: undefined
+          P2: undefined
+          P3: undefined
+          P4: undefined        
