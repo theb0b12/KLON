@@ -432,10 +432,10 @@ pcbs:
 
       battery_connector:
         what: ceoloide/battery_connector_jst_ph_2
-        where: matrix_inner_top
+        where: matrix_inner_home
         adjust:
-          shift: [-1.2kx,-1.2ky]
-          rotate: -90
+          shift: [-38.718,-13.125]
+          rotate: 90
         params:
           reversible: true
 
@@ -443,7 +443,7 @@ pcbs:
         what: ceoloide/power_switch_smd_side
         where: matrix_inner_top
         adjust:
-          shift: [-38.737, 9.176]
+          shift: [-38.737, 7.6]
           rotate: 180
         params:
           from: BAT_P
@@ -500,4 +500,4 @@ pcbs:
           P1: undefined
           P2: undefined
           P3: undefined
-          P4: undefined        
+          P4: undefined
