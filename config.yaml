@@ -482,12 +482,12 @@ pcbs:
           shift: [-25.478, -4.202]
           rotate: 0
         params:
-          A: idk
-          B: idk
-          C: idk
-          MP: idk
-          S1: idk
-          S2: idk
+          A: undefined
+          B: undefined
+          C: undefined
+          MP: undefined
+          S1: undefined
+          S2: undefined
 
       oled:
         what: oled
@@ -501,8 +501,8 @@ pcbs:
           P3: undefined
           P4: undefined
       
-      ttrs:
-        what: ttrs
+      trrs:
+        what: trrs
         where: matrix_inner_bottom
         adjust:
           shift: [-40.242, -17.620]
