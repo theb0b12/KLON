@@ -457,10 +457,9 @@ pcbs:
           to: RST
           reversible: true
         where: 
-          ref: matrix_inner_top
-
+          ref: matrix_inner_bottom
         adjust:
-          shift: [-2kx, -1.5ky]
+          shift: [-38.758, -10]
           rotate: 90
 
       haptic:
@@ -480,7 +479,7 @@ pcbs:
         what: rotary
         where: matrix_inner_bottom
         adjust:
-          shift: [-24,0]
+          shift: [-25.478, -4.202]
           rotate: 0
         params:
           A: idk
@@ -496,6 +495,18 @@ pcbs:
         adjust:
           shift: [-24.4, 2.8]
           rotate: 180
+        params:
+          P1: undefined
+          P2: undefined
+          P3: undefined
+          P4: undefined
+      
+      ttrs:
+        what: ttrs
+        where: matrix_inner_bottom
+        adjust:
+          shift: [-40.242, -17.620]
+          rotate: 90
         params:
           P1: undefined
           P2: undefined
