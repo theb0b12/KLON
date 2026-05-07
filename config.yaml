@@ -501,14 +501,84 @@ pcbs:
           P3: undefined
           P4: undefined
       
-      trrs:
-        what: trrs
+      ttrs:
+        what: ceoloide/trrs_pj320a
         where: matrix_inner_bottom
         adjust:
           shift: [-40.242, -17.620]
           rotate: 90
         params:
-          P1: undefined
-          P2: undefined
-          P3: undefined
-          P4: undefined
+          reversible: true
+
+
+      screw1:
+        what: ceoloide/mounting_hole_npth
+        where: matrix_inner_top
+        adjust:
+          shift: [-37.748, 15.883]
+      
+      screw2:
+        what: ceoloide/mounting_hole_npth
+        where: matrix_inner_top
+        adjust:
+          shift: [24.332, 15.883]
+      
+      screw3:
+        what: ceoloide/mounting_hole_npth
+        where: matrix_inner_top
+        adjust:
+          shift: [53.082, 15.883]
+
+      screw4:
+        what: ceoloide/mounting_hole_npth
+        where: matrix_inner_top
+        adjust:
+          shift: [67.922, 14.873]
+
+      screw5:
+        what: ceoloide/mounting_hole_npth
+        where: matrix_ring_home
+        adjust:
+          shift: [13.697, 14.003]
+
+      screw6:
+        what: ceoloide/mounting_hole_npth
+        where: matrix_ring_home
+        adjust:
+          shift: [2.007, -33.417]
+
+      screw7:
+        what: ceoloide/mounting_hole_npth
+        where: matrix_ring_home
+        adjust:
+          shift: [-9.603, -32.657]
+
+      screw8:
+        what: ceoloide/mounting_hole_npth
+        where: matrix_ring_home
+        adjust:
+          shift: [-12.253, 1.003]
+
+      screw9:
+        what: ceoloide/mounting_hole_npth
+        where: matrix_inner_bottom
+        adjust:
+          shift: [-37.748, -25.402]
+      
+      screw10:
+        what: ceoloide/mounting_hole_plated
+        where: matrix_index_home
+        adjust:
+          shift: [9.538, 10.325]
+      
+      screw11:
+        what: ceoloide/mounting_hole_plated
+        where: matrix_index_home
+        adjust:
+          shift: [-9.512, -8.725]
+      
+      screw12:
+        what: ceoloide/mounting_hole_plated
+        where: matrix_index_home
+        adjust:
+          shift: [28.588, -8.725]
