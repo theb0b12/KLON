@@ -502,7 +502,7 @@ pcbs:
           P4: SDA
 
       
-      ttrs:
+      trrs:
         what: trrs
         where: matrix_inner_bottom
         adjust:
