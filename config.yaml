@@ -482,11 +482,11 @@ pcbs:
           shift: [-25.478, -4.202]
           rotate: 0
         params:
-          A: undefined
-          B: undefined
-          C: undefined
-          MP: undefined
-          S1: undefined
+          A: GND
+          B: SDA
+          C: SCL
+          MP: SDA
+          S1: VCC
           S2: undefined
 
       oled:
@@ -496,19 +496,24 @@ pcbs:
           shift: [-24.4, 2.8]
           rotate: 180
         params:
-          P1: undefined
-          P2: undefined
-          P3: undefined
-          P4: undefined
+          P1: GND
+          P2: VCC
+          P3: SCL
+          P4: SDA
+
       
       ttrs:
-        what: ceoloide/trrs_pj320a
+        what: trrs
         where: matrix_inner_bottom
         adjust:
           shift: [-40.242, -17.620]
           rotate: 90
         params:
-          reversible: true
+          P1: RX
+          P2: GND
+          P3: VCC
+          P4: TX
+
 
 
       screw1:
