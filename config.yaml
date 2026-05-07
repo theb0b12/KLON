@@ -469,11 +469,11 @@ pcbs:
           shift: [41.5, -5.5]
           rotate: 180
         params:
-          P1: undefined
-          P2: undefined
-          P3: undefined
-          P4: undefined
-          P5: undefined
+          P1: VCC
+          P2: SDA
+          P3: SCL
+          P4: SDA
+          P5: GND
 
       rotary_encoder:
         what: rotary
@@ -482,12 +482,12 @@ pcbs:
           shift: [-25.478, -4.202]
           rotate: 0
         params:
-          A: GND
-          B: SDA
-          C: SCL
-          MP: SDA
-          S1: VCC
-          S2: undefined
+          A: ENCA
+          B: ENCB
+          C: GND
+          MP: undefined
+          S1: col
+          S2: row
 
       oled:
         what: oled
@@ -509,9 +509,9 @@ pcbs:
           shift: [-40.242, -17.620]
           rotate: 90
         params:
-          P1: RX
+          P1: VCC
           P2: GND
-          P3: VCC
+          P3: RX
           P4: TX
 
 
