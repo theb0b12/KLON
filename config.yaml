@@ -28,38 +28,45 @@ points:
       key:
         padding: u
         spread: u
+
       columns:
- 
         inner:
+          key:
+            column_net: P3
         index:
           key:
             stagger: 4
+            column_net: P4
         middle:
           key:
             stagger: 9
+            column_net: P5
         ring:
           key:
             stagger: -10.3
             splay: -4
             spread: 19
+            column_net: P6
         pinky:
           key:
             stagger: -14+1.23699
             splay: -6
             spread: u-0.17585
+            column_net: P7
         pinky_extra:
           key:
             stagger: 5
-
+            column_net: P8
           rows.top.skip: true
-
 
       rows:
         bottom:
           shift: [0, 0]
+          row_net: P0
         home:
-
+          row_net: P1
         top:
+          row_net: P2
         
 
     thumb1:
@@ -68,36 +75,51 @@ points:
           shift: [2.95, -21.95]
       columns:
         1:
-          key.anchor: matrix_index_bottom
+          key:
+            anchor: matrix_index_bottom
+            column_net: P4
       rows:
         r0:
+          row_net: P9
+
     thumb2:
       anchor:
         - ref: matrix_index_bottom
           shift: [-18.16425, -24.83108]
       columns:
         2:
-          key.rotate: 15
+          key:
+            rotate: 15
+            column_net: P3
       rows:
         r0:
+          row_net: P9
+
     thumb3:
       anchor:
         - ref: matrix_index_bottom
           shift: [-37.81425, -33.08388]
       columns:
         3:
-          key.rotate: 30
+          key:
+            rotate: 30
+            column_net: P10
       rows:
         r0:
+          row_net: P9
+
     thumb4:
       anchor:
         - ref: matrix_index_bottom
           shift: [-54.68925, -46.14597]
       columns:
         4:
-          key.rotate: 45
+          key:
+            rotate: 45
+            column_net: P16 # this is because the nicenano footprint is weird and does not have 11-13 and 16 is the next one on the board
       rows:
         r0:
+          row_net: P9
 
 outlines:
   keys:
