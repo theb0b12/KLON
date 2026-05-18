@@ -28,6 +28,7 @@ fp.push(`(attr virtual)`);
 fp.push(`(pad "1" smd rect (at -0.65 ${flipN(flip, 0)} ${flipR(flip, p.r + 0)}) (size 1 1.5) (layers "${(flip ? "B" : "F")}.Cu" "${(flip ? "B" : "F")}.Mask") ${p.P1})`);
 fp.push(`(pad "2" smd rect (at 0.65 ${flipN(flip, 0)} ${flipR(flip, p.r + 0)}) (size 1 1.5) (layers "${(flip ? "B" : "F")}.Cu" "${(flip ? "B" : "F")}.Mask") ${p.P2})`);
 
+// we dont want these silly little pieces of text for EACH jumper
 // // Drawings on F.CrtYd
 // fp.push(`(fp_line (start -1.65 ${flipN(flip, -1.25)}) (end 1.65 ${flipN(flip, -1.25)}) (layer "${(flip ? "B.CrtYd" : "F.CrtYd")}") (width 0.05))`);
 // fp.push(`(fp_line (start -1.65 ${flipN(flip, -1.25)}) (end -1.65 ${flipN(flip, 1.25)}) (layer "${(flip ? "B.CrtYd" : "F.CrtYd")}") (width 0.05))`);
