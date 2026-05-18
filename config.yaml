@@ -413,7 +413,7 @@ pcbs:
           adjust:
             rotate: 180
 
-      diode:
+      diodes:
         what: ceoloide/diode_tht_sod123
         where: true
         params:
@@ -501,7 +501,6 @@ pcbs:
           P3: SCL
           P4: SDA
 
-      
       trrs:
         what: trrs
         where: matrix_inner_bottom
@@ -514,7 +513,7 @@ pcbs:
           P3: RX
           P4: TX
 
-
+# screws
 
       screw1:
         what: ceoloide/mounting_hole_npth
@@ -587,3 +586,86 @@ pcbs:
         where: matrix_index_home
         adjust:
           shift: [28.588, -8.725]
+
+# jumpers that were not in the footprints
+
+      jumper:
+        what: jumper1
+        where: matrix_inner_home
+        params:
+          P1: P2
+          P2: P1
+        adjust:
+          shift: [-28.446969, -11.126740]
+          rotate: 90
+
+      jumper2:
+        what: jumper1
+        where: matrix_inner_home
+        params:
+          P1: P2
+          P2: P1
+        adjust:
+          shift: [-25.901969, -11.126740]
+          rotate: 90
+      
+      jumper3:
+        what: jumper1
+        where: matrix_inner_home
+        params:
+          P1: P2
+          P2: P1
+        adjust:
+          shift: [-23.407969, -11.126740]
+          rotate: 90
+
+      jumper4:
+        what: jumper1
+        where: matrix_inner_home
+        params:
+          P1: P2
+          P2: P1
+        adjust:
+          shift: [-20.862969, -11.126740]
+          rotate: 90
+
+      jumper5:
+        what: jumper1
+        where: matrix_middle_top
+        params:
+          P1: P2
+          P2: P1
+        adjust:
+          shift: [35.813601, 1.252664]
+          rotate: 90
+
+      jumper6:
+        what: jumper1
+        where: matrix_middle_top
+        params:
+          P1: P2
+          P2: P1
+        adjust:
+          shift: [43.413601, 1.252664]
+          rotate: 90
+      
+      jumper7:
+        what: jumper1
+        where: matrix_middle_top
+        params:
+          P1: P2
+          P2: P1
+        adjust:
+          shift: [45.988601, 1.252664]
+          rotate: 90
+
+# that one diode that was not with the rotary encoder
+
+      diode:
+        what: ceoloide/diode_tht_sod123
+        where: matrix_inner_bottom
+        params:
+          to: P1
+          from: P2
+        adjust:
+          shift: [-20.187969, 2.787857]
