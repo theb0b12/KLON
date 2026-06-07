@@ -47,4 +47,3 @@ function normalizeAngle(angle) {
 }
 function flipR(flip, r) { return normalizeAngle(flip ? (180 - r) : r) }
 function flipN(flip, n) { return flip ? -n : n }
-

@@ -406,6 +406,47 @@ outlines:
   #  - operation: stack
   #    name: keys
 
+  combo:
+    - name: board2
+    - operation: stack
+      name: keys
+  
+  combo1:
+    - name: board2
+    - operation: subtract
+      name: keys
+
+  switch_plate_keys:
+    - what: rectangle
+      where: true
+      size: [kx-5,ky-5] # this makes it 14mm
+
+  realBoard:
+    - name: board2
+    - operation: subtract
+      name: switch_plate_keys
+    # - operation: stack
+    #   name: standoff
+    # - operation: stack
+    #   name: mounting
+
+  xlBoard:
+    - name: board2
+      expand: 2
+    # - name: mounting
+    #   operation: subtract
+
+
+  switch_plate:
+    - name: xlBoard
+    - operation: subtract
+      name: switch_plate_keys
+
+  wall_outline:
+    - name: xlBoard
+    - operation: subtract
+      name: board2
+
 
 pcbs:
   KLON:
@@ -691,3 +732,33 @@ pcbs:
           from: P2
         adjust:
           shift: [-20.187969, 2.787857]
+
+
+cases:
+  # _holes:
+  #   - name: mounting
+  #     extrude: 2
+  # _standoffs:
+  #   - name: standoff
+  #     extrude: 2
+  wall:
+    - name: wall_outline
+      extrude: 11
+  plate_tester:
+    - what: case
+      name: wall
+    - name: switch_plate
+      shift: [0,0,9]
+      extrude: 2
+  case:
+    # - what: case
+    #   name: _standoffs
+    #   operation: add
+    # - what: case
+    #   name: _holes
+    #   operation: subtract
+    - what: case
+      name: wall
+      operation: add
+    - name: xlBoard
+      operation: add
