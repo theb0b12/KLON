@@ -20,9 +20,6 @@ fp.push(`(property "Description" "" hide (at 0 0 ${flipR(flip, p.r) % 180}) (lay
 
 fp.push(`(attr exclude_from_pos_files exclude_from_bom)`);
 
-// Unknown to kicad2ergogen
-fp.push(`(embedded_fonts no)`);
-
 // Pads
 fp.push(`(pad "1" smd custom (at 0.275 ${flipN(flip, 0)} ${flipR(flip, p.r + 180)}) (size 0.2 0.2) (layers "${(flip ? "B" : "F")}.Cu" "${(flip ? "B" : "F")}.Mask" "${(flip ? "B" : "F")}.Paste") (zone_connect 2) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.5 ${flipN(flip, -0.625)}) (xy -0.25 ${flipN(flip, -0.625)}) (xy 0.25 ${flipN(flip, 0)}) (xy -0.25 ${flipN(flip, 0.625)}) (xy -0.5 ${flipN(flip, 0.625)})) (width 0) (fill yes)))  ${p.P1})`);
 fp.push(`(pad "1" smd custom (at 0.275 ${flipN(flip, 0)} ${flipR(flip, p.r + 180)}) (size 0.2 0.2) (layers "${(flip ? "F" : "B")}.Cu" "${(flip ? "F" : "B")}.Mask" "${(flip ? "F" : "B")}.Paste") (zone_connect 2) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.5 ${flipN(flip, 0.625)}) (xy -0.25 ${flipN(flip, 0.625)}) (xy 0.25 ${flipN(flip, 0)}) (xy -0.25 ${flipN(flip, -0.625)}) (xy -0.5 ${flipN(flip, -0.625)})) (width 0) (fill yes)))  ${p.P1})`);
