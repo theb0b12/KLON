@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 2.5,
-          "width": 2.55
+          "drill": 1.9,
+          "height": 0.5,
+          "width": 0.5
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -300,7 +300,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "KLON-GERBER",
+      "plot": "KLON-GERBER-V2",
       "specctra_dsn": "",
       "vrml": ""
     },
@@ -310,7 +310,13 @@
     "bus_aliases": {},
     "legacy_lib_dir": "",
     "legacy_lib_list": [],
-    "top_level_sheets": []
+    "top_level_sheets": [
+      {
+        "filename": "KLON -nice_view - Copy.kicad_sch",
+        "name": "KLON -nice_view - Copy",
+        "uuid": "00000000-0000-0000-0000-000000000000"
+      }
+    ]
   },
   "sheets": [],
   "text_variables": {},
