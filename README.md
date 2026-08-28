@@ -1,7 +1,7 @@
 # KLON
-##A CLONE of Geist's Klor
+## A CLONE of Geist's Klor
 
-- Choc + MX hotswap (at the same time on the board, aka oppistite sides of the main hole)
+- Choc + MX hotswap (at the same time on the board)
 - wired and wireless support
 - reversible
 - rotary support
